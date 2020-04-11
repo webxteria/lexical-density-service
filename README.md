@@ -11,33 +11,44 @@ Pre-requisites: Installed Nodejs(v12.x), running MongoDB on local machine, and p
 
 # Endpoints :
 1.  Endpoint: http://localhost:3000/api/complexity/
+
     Method: POST
+    
     Query params: mode, value should be verbose.
+    
     headers: content-type: application/json
 
 with a body key "text". This endpoint calculates Lexical Density by considering value as a single sentence. e.g. "Kim loves going to the cinema. He is also a very jolly kind of person". This endpoint both as a single sentence and calculates the lexical density of overall.
 "?mode=verbose" if mode append and with value "verbose" then it breaks this input "Kim loves going to the cinema. He is also a very jolly kind of person" into two separate lines and response for each row separately
 
 2.  Endpoint: http://localhost:3000/api/complexity/verbose 
+    
     Method: POST
+    
     headers: content-type: application/json
 
    This endpoint handles paragraph inputs. e.g. if a user pass, "Kim loves going to the cinema. He is also a very jolly kind of person" this endpoint breaks into separate lines and calculates their Lexical density separately and also overall.
 
 3.  Endpoint: http://localhost:3000/api/words/
+
     Method: GET
+    
     headers: content-type: application/json
    
    This endpoint returns all the non-lexical words from the database with their id,name,created_at
 
 4.  Endpoint: http://localhost:3000/api/words/{id}
+
     Method: GET
+    
     headers: content-type: application/json
    
    This endpoint returns single word from the list of  non-lexical words from the database with their id,name,created_at
 
 5.  Endpoint: http://localhost:3000/api/words/{id}
+
     Method: DELETE
+    
     headers: content-type: application/json
    
    This endpoint delete the single wordfrom the database
